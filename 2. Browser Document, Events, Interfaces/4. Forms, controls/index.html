@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms</title>
+    <style>
+        .invalid {
+            border-color: red;
+        }
+
+        #error {
+            color: red
+        }
+
+        li {
+            cursor: pointer;
+        }
+
+        :focus {
+            outline: 1px dashed green;
+        }
+    </style>
+</head>
+<body>
+<form name="my">
+    <input name="one" value="1">
+    <input name="two" value="2">
+</form>
+<hr/>
+<form>
+    <label for="ten">10</label>
+    <input id="ten" type="radio" name="age" value="10">
+    <label for="twenty">20</label>
+    <input id="twenty" type="radio" name="age" value="20">
+</form>
+<hr/>
+<form id="form">
+    <fieldset name="userFields">
+        <legend>info</legend>
+        <input name="login" type="text">
+    </fieldset>
+</form>
+<hr/>
+<select id="select">
+    <option value="apple">Apple</option>
+    <option value="pear">Pear</option>
+    <option value="banana">Banana</option>
+</select>
+<hr/>
+<select id="select1" multiple>
+    <option value="blues" selected>Blues</option>
+    <option value="rock" selected>Rock</option>
+    <option value="classic">Classic</option>
+</select>
+<hr/>
+<p>Your email please: <input type="email" id="input">c</p>
+<div id="error"></div>
+<hr/>
+
+<p>Click the first item and press Tab. Keep track of the order. Please note that many subsequent Tabs can move the focus
+    out of the iframe with the example.
+</p>
+<ul>
+    <li tabindex="1">One</li>
+    <li tabindex="0">Zero</li>
+    <li tabindex="2">Two</li>
+    <li tabindex="-1">Minus one</li>
+</ul>
+<hr/>
+<input type="text" id="input1"> oninput: <span id="result"></span>
+
+<script src="forms.js"></script>
+</body>
+</html>
