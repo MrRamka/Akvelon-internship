@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select Task</title>
+    <style>
+        .selected {
+            background: chartreuse;
+        }
+    </style>
+</head>
+<body>
+<ul id="list">
+    <li>apple</li>
+    <li>banana</li>
+    <li>peach</li>
+    <li>pear</li>
+</ul>
+
+
+<script>
+    let list = document.getElementById('list');
+    list.onclick = function (event) {
+        if (event.target.tagName !== 'LI') return;
+            if (event.ctrlKey ||event.metaKey) {
+                multipleSelect(event.target);
+            } else {
+                singleSelect(event.target);
+            }
+    }
+    function singleSelect(li) {
+        let selected = list.querySelectorAll('.selected');
+        for(let elem of selected) {
+            elem.classList.remove('selected');
+        }
+        li.classList.add('selected');
+    }
+    function multipleSelect(li) {
+        li.classList.toggle('selected');
+    }
+</script>
+</body>
+</html>

@@ -119,7 +119,7 @@ form.innerHTML = '<input name="q" value="test">';
 // the form must be in the document to submit it
 document.body.append(form);
 
-form.submit();
+// form.submit();
 
 /*
 There are two main ways to submit a form:

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Infinity page</title>
+    <style>
+        #text {
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+<div id="text">
+
+</div>
+
+<script type="application/javascript">
+    function initDate(elem, amount) {
+        for (let i = 0; i < amount; i++) {
+            addDate(elem);
+        }
+    }
+
+    function addDate(elem) {
+        let p = document.createElement('p');
+        let date = new Date()
+        p.innerText = date.toString();
+        elem.append(p);
+    }
+
+    let textPlace = document.getElementById('text');
+    let delta = 50;
+
+    window.addEventListener('scroll', function () {
+        // textPlace.innerHTML = pageYOffset + 'px';
+        let body = document.body;
+        let html = document.documentElement;
+
+        let height = Math.max(body.scrollHeight, body.offsetHeight,
+            html.clientHeight, html.scrollHeight, html.offsetHeight);
+
+        console.log(height);
+        console.log(pageYOffset);
+        console.log();
+        if (height - pageYOffset > delta) {
+            addDate(textPlace);
+        }
+    });
+
+    initDate(textPlace, 10);
+
+    //second solution
+
+    /*
+            function populate() {
+                while(true) {
+                    let windowRelativeBottom = document.documentElement.getBoundingClientRect().bottom;
+                    if (windowRelativeBottom > document.documentElement.clientHeight + 100) break;
+                    document.body.insertAdjacentHTML("beforeend", `<p>Date: ${new Date()}</p>`);
+                }
+            }
+
+            window.addEventListener('scroll', populate);
+
+            populate();
+        */
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Keys</title>
+</head>
+<body>
+<p>Enter <strong>Q</strong> and <strong>F</strong></p>
+
+<script>
+    let pressedKeys = new Set()
+
+    function runOnKeys(func, ...keys) {
+        document.addEventListener('keydown', function(event) {
+            pressedKeys.add(event.code);
+
+            console.log(keys);
+            console.log(pressedKeys);
+            for (const key of keys) {
+                if (!pressedKeys.has(key)) return;
+            }
+
+            func();
+            pressedKeys.clear();
+        });
+
+        document.addEventListener('keyup', function(event) {
+            pressedKeys.delete(event.code);
+        });
+    }
+
+
+    runOnKeys(() => console.log('Pressed'), 'KeyQ', 'KeyF');
+    
+</script>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add select</title>
+</head>
+<body>
+<select id="genres">
+    <option value="rock">Rock</option>
+    <option value="blues" selected>Blues</option>
+</select>
+<script>
+    let option = new Option("Classic", "classic");
+    let select = document.getElementById('genres');
+    setTimeout(() => {
+        select.append(option);
+    }, 1000);
+</script>
+</body>
+</html>
