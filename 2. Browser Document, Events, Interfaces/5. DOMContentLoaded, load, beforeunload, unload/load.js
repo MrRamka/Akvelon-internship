@@ -83,7 +83,7 @@ let script = document.createElement('script');
 script.src = "https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.3.0/lodash.js"
 document.head.append(script);
 
-script.onload = function() {
+script.onload = function () {
     // the script creates a helper function "_"
     console.log(_); // the function is available
 };
@@ -92,7 +92,7 @@ script = document.createElement('script');
 script.src = "https://example.com/404.js"; // no such script
 document.head.append(script);
 
-script.onerror = function() {
+script.onerror = function () {
     console.error("Error loading " + this.src); // Error loading https://example.com/404.js
 };
 
