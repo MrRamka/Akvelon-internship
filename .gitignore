@@ -1,6 +1,7 @@
 .idea
 # dependencies
 */node_modules
+Typescript/app/node_modules
 */.pnp
 .pnp.js
 
